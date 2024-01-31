@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- // Loader
+  // Application
+  // Rendering -->
+  <script src="engine/Loader.js"></script>
+  <script>
+
+
+
+    const { Loader } = GameEngine
+
+    const loader = new Loader
+
+    loader.addImage('1', 'static/1.jpg')
+    loader.addJson('persons', 'static/persons.json')
+
+    loader.load(() => {
+      console.log('all images loaded');
+    })
+
+
+    Loader
+      .loadImage('static/1.jpg')
+      .then(image => {
+        document.body.append(image)
+      })
+  </script>
+</body>
+
+</html>
